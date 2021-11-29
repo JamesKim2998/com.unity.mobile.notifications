@@ -290,7 +290,8 @@ bool validateAuthorizationStatus(UnityNotificationManager* manager)
         content.threadIdentifier = [NSString stringWithUTF8String: data->threadIdentifier];
 
     // TODO add a way to specify custom sounds.
-    content.sound = [UNNotificationSound defaultSound];
+    // XXX: 강제로 사운드를 재생하지 않는다.
+    // content.sound = [UNNotificationSound defaultSound];
 
     NSString* identifier = [NSString stringWithUTF8String: data->identifier];
     // Generate UNNotificationTrigger from iOSNotificationData.
